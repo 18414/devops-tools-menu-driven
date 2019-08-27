@@ -1,0 +1,25 @@
+---
+- name: install maven on CentOS7 
+  get_url:
+    url: https://www-us.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz 
+    dest: /opt
+  
+- name: untar file 
+  unarchive: 
+    src: /opt/apache-maven-3.6.0-bin.tar.gz
+    dest: /opt/
+
+- name: Create file for maven scrtipt 
+  file: 
+    state: touch 
+    path: /etc/profile.d/maven.sh
+    
+- name: Set maven environment variable
+  lineinfile:
+    path: /etc/profile.d/maven.sh
+    line: "{{ item }}" 
+  with_items: 
+    - export M2_HOME=/opt/apache-maven-3.6.0
+    - export MAVEN_HOME=/opt/maven
+    - export PATH=${M2_HOME}/bin:${PATH}
+  
