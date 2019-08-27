@@ -1,28 +1,7 @@
 ---
 # tasks file for devops-tools-setup
 
-- name: TASKS LIST
-  debug: 
-    msg: "You can install individually jenkins, JDK, Git, Docker, maven and Tomcat using Ansible tags"
 
 - include_tasks: "{{ application }}.yml"
   
-#  tags: jenkins
 
-#- include_tasks: "{{ application }}.yml"
- # tags: jdk
-
-#- include_tasks: "{{ application }}.yml"
-  #tags: git
-
-#- include_tasks: "{{ application }}.yml"
-#  tags: docker
-
-#- include_tasks: "{{ application }}.yml"
-#  tags: maven
-
-#- include_tasks: "{{ application }}.yml"
-#  tags: tomcat
-
-#- include_tasks: "{{ application }}.yml"
- # tags: gradle
