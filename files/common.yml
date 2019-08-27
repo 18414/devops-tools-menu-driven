@@ -8,4 +8,4 @@
       private: no
   
   roles: 
-    - devops-tools-setup_menu
+    - devops-tools-menu-driven
