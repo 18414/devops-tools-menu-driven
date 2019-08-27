@@ -26,10 +26,10 @@ Below is the common.yml
 
     - hosts: localhost
       roles:
-         - devops-tools-setup
+         - devops-tools-menu-driven
 
 
- RUN it: ansible-playbook -i hosts common.yml --tags "jdk"
+ RUN it: ansible-playbook -i hosts common.yml --extra-vars "my_host=yourhostname"
 
 Note: mention the tag as per your requirement like git, maven, jenkins, jdk and Docker
 
