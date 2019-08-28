@@ -7,7 +7,7 @@
 
 
 - name: Running script to check jdk installed version  
-  script: devops-tools-setup_menu/files/file.sh
+  script: devops-tools-menu-driven/files/file.sh
   register: jdk_v
 
 - name: Checking JDK version
