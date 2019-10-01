@@ -1,0 +1,18 @@
+---
+- hosts: "{{ my_host }}"
+  become: true
+#  run_once: true
+  vars_prompt: 
+    - name: "application"
+      prompt: "Which Tool do you want to install?\n1- Docker\n2- Jenkins\n3- Gradle\n4- JDK\n5- TOMCAT\n6- Git\n7- Maven\n" 
+      private: no
+  
+  tasks: 
+    - name: Roles
+      include_role: 
+        name: devops-tools-menu-driven
+      tags: tools
+
+      include_role: 
+        name: apache
+      tags: apache 
