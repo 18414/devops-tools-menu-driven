@@ -4,7 +4,7 @@
   run_once: true
   vars_prompt: 
     - name: "application"
-      prompt: "Which Tool do you want to install?\n1- Docker\n2- Jenkins\n3- Gradle\n4- JDK\n5- TOMCAT\n6- Git\n7- Maven\n" 
+      prompt: "Which Tool do you want to install?\n1- Docker\n2- Jenkins\n3- Gradle\n4- JDK\n5- TOMCAT\n6- Git\n7- Maven\n8 - Exit\n"
       private: no
   
   roles: 

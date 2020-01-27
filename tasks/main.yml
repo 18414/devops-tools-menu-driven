@@ -1,7 +1,40 @@
 ---
 # tasks file for devops-tools-setup
 
+# tasks file for os-patching-role
+- set_fact:
+    decision: "{{ application }}"
 
-- include_tasks: "{{ application }}.yml"
+- include_tasks: docker.yml
+  when: decision == "1"  
+
   
+- include_tasks: git.yml 
+  when: decision == "2"  
+
+- include_tasks: gradle.yml
+  when: decision == "3"  
+
+
+- include_tasks: jdk.yml
+  when: decision == "4"  
+
+
+- include_tasks: jenkins.yml
+  when: decision == "5"  
+
+- include_tasks: maven.yml
+  when: decision == "6"  
+
+
+- include_tasks: tomcat.yml
+  when: decision == "7"  
+
+- meta: end_play
+  when: decision == "8"
+
+
+
+
+
 
