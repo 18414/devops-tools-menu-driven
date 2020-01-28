@@ -27,8 +27,11 @@
   when: decision == "6"  
 
 
-- include_tasks: tomcat.yml
-  when: decision == "7"  
+- include_tasks: latest_tomcat_py.yml
+  when: decision == "7"
+
+#- include_tasks: tomcat.yml
+ # when: decision == "7"  
 
 - meta: end_play
   when: decision == "8"
